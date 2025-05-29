@@ -858,7 +858,7 @@ section,
   max-width: 100%;
   max-height: 100%;
   */
-  display: none; /* Hide the <img> tag since it's now a background */
+  display: none;
 }
 
 /* Optional: Add media queries for finer control, though background-size: cover is usually sufficient */
@@ -877,7 +877,7 @@ section,
 
 @media (max-width: 768px) {
   .hero img {
-    object-position: top center;
+        transform: translateX(20px);
   }
 }
 
@@ -928,7 +928,9 @@ section,
 /* Media query for mobile devices */
 @media (max-width: 768px) { /* Adjust this breakpoint as needed for your definition of "mobile" */
   .hero .btn-get-started {
-    margin-right: 80%; 
+    padding: 10px 10% 10px 30px; /* Adjust padding for mobile */
+    font-size: 14px;
+    margin: 15% 5% -20% 0; /* Add margin for spacing */
   }
 }
 
