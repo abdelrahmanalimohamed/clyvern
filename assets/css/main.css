@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Salmond';
-  src: url('assets/fonts/Salmond - Medium_2.otf') format('opentype');
+  src: url('../fonts/Salmond-Regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -825,32 +825,68 @@ section,
   margin-bottom: 0;
 }
 
-/*--------------------------------------------------------------
-# Hero Section
---------------------------------------------------------------*/
 .hero {
   --default-color: #ffffff;
-  --background-color: #;
+  --background-color: #; /* Set the background color here if not already in HTML */
   --heading-color: #ffffff;
   width: 100%;
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 120px);
   position: relative;
-  padding: 80px 0;
+  overflow: hidden;
+  padding-top: 80px;
+  padding-bottom: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  
+  /* Add background image properties directly to .hero */
+  background-image: url('../img/Artboard 1.png'); /* Set your image here */
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-position: center center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents image repetition */
 }
 
 .hero img {
+  /* Remove these properties as the image will now be a background for .hero */
+  /*
   position: absolute;
   inset: 0;
-  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 1;
+  z-index: 0;
+  pointer-events: none;
+  max-width: 100%;
+  max-height: 100%;
+  */
+  display: none; /* Hide the <img> tag since it's now a background */
 }
+
+/* Optional: Add media queries for finer control, though background-size: cover is usually sufficient */
+@media (max-width: 768px) {
+  .hero {
+    /* Adjust min-height for smaller screens if needed */
+    min-height: 60vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 50vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero img {
+    object-position: top center;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .hero img {
+    object-position: center center;
+  }
+}
+
 
 .hero:before {
   content: "";
@@ -889,9 +925,18 @@ section,
   color: var(--contrast-color);
 }
 
+/* Media query for mobile devices */
+@media (max-width: 768px) { /* Adjust this breakpoint as needed for your definition of "mobile" */
+  .hero .btn-get-started {
+    margin-right: 80%; 
+  }
+}
+
 .hero .btn-get-started:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
+
+
 
 .hero .btn-watch-video {
   font-size: 16px;
@@ -2675,16 +2720,18 @@ section,
 
 /* Make the background image responsive */
 .bg-image {
-  width: 100%;
-  height: auto;
-  display: block;
+  width: 15%;        /* Reduced from 20% - makes it smaller by default */
+  max-width: 100%;   /* Reduced from 550% - prevents it from becoming excessively large */
+  margin-left: 0%;   /* Keeps the left margin at 0 */
+  position: relative; /* For absolute positioning of child elements */
+  height: auto;      /* Maintains aspect ratio */
+  display: block;    /* Ensures it takes up its own line */
 }
-
 /* Heading styles with responsive font sizes */
 .main-heading {
   color: #083449;
   font-weight: bold;
-  font-size: clamp(2rem, 6vw, 120px); /* Responsive from 2rem to 100px */
+  font-size: clamp(2rem, 6vw, 12000px); /* Responsive from 2rem to 100px */
 }
 
 .sub-heading {
@@ -2783,13 +2830,421 @@ section,
 }
 .responsive-title {
   font-weight: bold;
-  font-size: 50px; /* Default size for small screens */
+   /* Default size for small screens */
 }
 
 /* For laptop/desktop screens */
 @media (min-width: 1024px) {
   .responsive-title {
     font-size: 100px;
+  }
+}
+/* General container and section styling */
+.services.section {
+    padding: 60px 0; /* Adjust padding as needed */
+    color: #fff; /* White text color */
+    position: relative; /* Crucial for any background images or absolute positioning */
+    overflow: hidden; /* To handle potential overlaps */
+    min-height: 950px; /* Base min-height for large screens */
+}
+
+.services .container {
+    max-width: 1200px; /* Max width for content */
+    margin: 0 auto; /* Center the container */
+    padding: 0 15px; /* Horizontal padding for smaller screens */
+    position: relative; /* Ensures z-index and context for children */
+    z-index: 2; /* Keep container content above any section-level background */
+}
+
+/* Background image for the entire section (if BG2.png is the wave pattern) */
+.services .bg-image { /* Keep this if BG2.png is the wave pattern */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire area */
+    z-index: 0; /* Behind content */
+    opacity: 0.2; /* Adjust opacity if it's a subtle background pattern */
+}
+
+/* Responsive Title */
+.responsive-title {
+    font-size: 3em; /* Adjust as needed */
+    text-align: left; /* Align to left as in the image */
+    margin-bottom: 40px;
+    font-weight: bold; /* Make it bold */
+    position: relative; /* Ensure it's above other elements */
+    z-index: 3; /* Higher z-index to be on top */
+}
+
+/* Main Layout Grid for 2x2 structure, always active */
+.main-layout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Always two equal columns */
+    grid-template-rows: auto auto; /* Rows adjust to content height */
+    gap: 40px 30px; /* Vertical and horizontal gap between grid items */
+    align-items: start; /* Align items to the start of their grid area vertically */
+}
+
+/* Column specific styling - these remain consistent */
+.top-left-text-column {
+    grid-column: 1 / 2; /* Spans the first column */
+    grid-row: 1 / 2; /* First row */
+}
+
+.top-right-graphic-column {
+    grid-column: 2 / 3; /* Spans the second column */
+    grid-row: 1 / 2; /* First row */
+    display: flex; /* To center image */
+    justify-content: flex-end; /* Align puzzle to the right */
+    align-items: flex-start; /* Align puzzle to the top */
+    padding-top: 50px; /* Adjust vertical position of puzzle */
+}
+
+.bottom-left-graphic-column {
+    grid-column: 1 / 2; /* Spans the first column */
+    grid-row: 2 / 3; /* Second row */
+    display: flex; /* To center image */
+    justify-content: flex-start; /* Align people to the left */
+    align-items: flex-end; /* Align people to the bottom */
+    padding-bottom: 20px; /* Adjust vertical position of people */
+}
+
+.bottom-right-text-column {
+    grid-column: 2 / 3; /* Spans the second column */
+    grid-row: 2 / 3; /* Second row */
+}
+
+/* Text Block Styling */
+.text-block {
+    margin-bottom: 30px; /* Space between text blocks */
+}
+
+.text-block h2 {
+    font-size: 1.8em; /* Base font size */
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.text-block p {
+    font-size: 1.1em; /* Base font size */
+    line-height: 1.6;
+}
+
+/* Graphic Image Styling - Base sizes */
+.graphic-puzzle {
+    max-width: 350px;
+    height: auto;
+    display: block;
+}
+
+.graphic-people {
+    max-width: 550px;
+    height: auto;
+    display: block;
+}
+
+/* Media Queries for Adjusting Sizes, NOT layout */
+
+/* Adjust font sizes and image sizes for tablets and smaller laptops */
+@media (max-width: 992px) {
+    .services.section {
+        min-height: 850px; /* Maintain height for two columns */
+        padding-bottom: 40px;
+    }
+
+    .responsive-title {
+        font-size: 2.5em;
+        margin-bottom: 30px;
+    }
+
+    .main-layout-grid {
+        gap: 30px 20px; /* Reduce gap */
+    }
+
+    .text-block h2 {
+        font-size: 1.6em;
+    }
+
+    .text-block p {
+        font-size: 1em;
+    }
+
+    .graphic-puzzle {
+        max-width: 280px;
+    }
+
+    .graphic-people {
+        max-width: 450px;
+    }
+
+    .top-right-graphic-column {
+        padding-top: 30px;
+    }
+    .bottom-left-graphic-column {
+        padding-bottom: 10px;
+    }
+}
+
+/* Further adjustments for mobile phones and very small screens */
+/* Force 2-column layout even at these sizes, making content very compact */
+@media (max-width: 768px) {
+    .services.section {
+        min-height: 700px; /* Maintain height for two columns */
+        padding: 30px 0;
+    }
+
+    .responsive-title {
+        font-size: 2em;
+        margin-bottom: 25px;
+        text-align: center; /* Center title as columns get narrower */
+    }
+
+    .main-layout-grid {
+        /* No change to grid-template-columns here, keeps 1fr 1fr */
+        gap: 15px 10px; /* Reduce gap significantly */
+    }
+
+    .text-block h2 {
+        font-size: 1.2em; /* Smaller H2 */
+    }
+
+    .text-block p {
+        font-size: 0.8em; /* Smaller paragraph for readability */
+        line-height: 1.4; /* Tighter line spacing */
+    }
+
+    .graphic-puzzle {
+        max-width: 180px; /* Make puzzle smaller */
+    }
+
+    .graphic-people {
+        max-width: 280px; /* Make people smaller */
+    }
+
+    .top-right-graphic-column {
+        padding-top: 10px; /* Reduce padding for smaller images */
+        justify-content: center; /* Center the puzzle image horizontally */
+    }
+    .bottom-left-graphic-column {
+        padding-bottom: 5px; /* Reduce padding for smaller images */
+        justify-content: center; /* Center the people image horizontally */
+    }
+    .top-left-text-column,
+    .bottom-right-text-column {
+        text-align: center; /* Center text to fit narrow columns */
+    }
+}
+
+@media (max-width: 480px) { /* For extra small phones, pushing it to the limits */
+    .services.section {
+        min-height: 600px; /* Ensure space, content will be very dense */
+        padding: 15px 0; /* Less padding */
+    }
+    .responsive-title {
+        font-size: 1.5em; /* Even smaller title */
+        margin-bottom: 20px;
+    }
+    .main-layout-grid {
+        gap: 10px 5px; /* Very small gap */
+    }
+    .text-block h2 {
+        font-size: 1em; /* Very small H2 */
+    }
+    .text-block p {
+        font-size: 0.7em; /* Extremely small paragraph text */
+        line-height: 1.3; /* Very tight line spacing */
+    }
+    .graphic-puzzle {
+        max-width: 120%; /* Very small puzzle image */
+    }
+    .graphic-people {
+        max-width: 180%; /* Very small people image */
+    }
+    .top-right-graphic-column {
+        padding-top: 5px;
+    }
+    .bottom-left-graphic-column {
+        padding-bottom: 0;
+    }
+}
+
+/* --- Base Styles for the Section --- */
+.section-business-puzzle {
+  background-color: #083449; /* Dark blue background */
+  color: white; /* Default text color for the section */
+  position: relative; /* Essential for positioning the background image correctly */
+  overflow: hidden; /* Ensures background image doesn't overflow */
+  min-height: 550px; /* Ensure enough height for the content and the large image on desktop */
+
+  /* The man's image as a background for the section (DEFAULT/DESKTOP) */
+  background-image: url('../img/BIG3.png'); /* Path to your image */
+  background-size: 700px auto; /* Specific width for desktop to control size, auto for height */
+  /* This value is crucial for positioning the man on the far right and slightly off-screen on desktop */
+  background-position: calc(100% + -20%) bottom; /* Adjust 100px to move man further right if needed */
+  background-repeat: no-repeat; /* Prevents image from repeating */
+}
+
+.section-business-puzzle .container {
+  max-width: 1200px; /* Max width of your content */
+  margin: 0 auto; /* Center the container */
+  padding: 0 15px; /* Horizontal padding for responsiveness */
+  position: relative; /* Helps with z-index if content needs to be above background */
+  z-index: 2; /* Ensures text content is above the section's background image */
+}
+
+/* --- Heading Styles --- */
+.business-puzzle__heading {
+  font-size: 3em; /* Adjust as needed for desktop */
+  text-align: left; /* Aligns to left like the image */
+  margin-bottom: 20px;
+  line-height: 1.2; /* Spacing between lines */
+  font-weight: bold; /* Assuming the heading is bold */
+}
+
+.business-puzzle__heading-line {
+  display: block; /* Forces "YOUR BUSINESS PUZZLE?" to a new line */
+}
+
+.business-puzzle__heading-highlight {
+  color: #00b0f0; /* Highlight color for "BUSINESS PUZZLE?" */
+}
+
+/* --- Styles for the "Let's unlock..." text and icons group --- */
+.business-puzzle__body-content {
+  margin-top: 40px; /* Space below the heading */
+  padding-left: 80px; /* Pushes the entire block to the right, under the heading on desktop */
+  max-width: 500px; /* Limits the text width to prevent overlap with the man's image */
+  text-align: left; /* Ensure content is left-aligned within its block */
+}
+
+.business-puzzle__intro-text {
+  font-size: 1.2em; /* Size of the introductory text */
+  margin-bottom: 20px;
+  padding-bottom: 5px; /* Space for the underline */
+  border-bottom: 2px solid #287a6c; /* Green underline under "Let's unlock..." */
+  display: inline-block; /* Allows underline to fit content */
+}
+/* New CSS for the mobile line break within intro text */
+.business-puzzle__intro-text .mobile-line-break {
+  display: inline; /* Default: inline for desktop */
+}
+
+.business-puzzle__contact-link {
+  color: #00b0f0; /* Color for "Contact us today to get started!" */
+  text-decoration: none; /* Removes underline */
+  font-weight: bold;
+  display: inline-block; /* Allows underline and aligns well */
+  margin-bottom: 30px; /* Space below the link */
+}
+
+.business-puzzle__contact-link .mobile-line-break {
+  display: inline;
+}
+
+
+.business-puzzle__contact-link:hover {
+  opacity: 0.8; /* Slight hover effect */
+}
+
+/* --- Contact Icons Styles --- */
+.business-puzzle__contact-icons {
+  display: flex; /* Flexbox for icons */
+  gap: 20px; /* Space between individual icons */
+  margin-top: 20px; /* Space above icons */
+}
+
+.business-puzzle__contact-icon {
+  font-size: 1.5em; /* Size of the icons */
+  color: white; /* Color of the icons */
+}
+
+.mobile-only-br {
+  display: none  !important; ;
+}
+/* --- Responsive Adjustments (Media Queries) --- */
+
+/* For screens smaller than 992px (e.g., tablets, smaller laptops) */
+@media (max-width: 992px) {
+  .section-business-puzzle {
+    padding: 40px 0; /* Adjust padding for smaller screens */
+    min-height: 400px; /* Adjusted min-height for tablet view */
+    background-size: 600px auto; /* Smaller specific width for image on tablet */
+    background-position: center bottom; /* Center the image horizontally, align bottom */
+  }
+
+  .business-puzzle__heading {
+    font-size: 2.5em; /* Smaller heading on tablets */
+    text-align: left; /* ALIGN LEFT FOR TABLET HEADING */
+  }
+
+  .business-puzzle__body-content {
+    padding-left: 0; /* Remove left padding for mobile/tablet */
+    margin-top: 30px; /* Adjust spacing */
+    max-width: 100%; /* Take full width */
+    text-align: left; /* ALIGN LEFT FOR BODY CONTENT */
+  }
+
+    .business-puzzle__intro-text .mobile-line-break {
+    display: block;
+  }
+    /* Force line break for "get started!" on mobile/tablet */
+  .business-puzzle__contact-link .mobile-line-break {
+    display: block;
+  }
+
+    .mobile-only-br {
+    display: block  !important; /* Force line break */
+  }
+
+  .business-puzzle__intro-text {
+    display: inline-block; /* Revert to inline-block for left alignment */
+    margin-left: 0; /* Ensure no auto margin from previous centering */
+    margin-right: 0; /* Ensure no auto margin from previous centering */
+  }
+
+  .business-puzzle__contact-link {
+    display: inline-block; /* Maintain as inline-block */
+  }
+
+  .business-puzzle__contact-icons {
+    justify-content: flex-start; /* ALIGN LEFT FOR ICONS */
+    margin-bottom: 0; /* Reset margin */
+  }
+}
+
+/* For screens smaller than 768px (e.g., larger phones) */
+@media (max-width: 768px) {
+  .section-business-puzzle {
+    min-height: 350px; /* Further adjusted min-height for smaller tablets/phones */
+    background-size: 450px auto; /* Even smaller specific width for image */
+    background-position: center bottom; /* Keep centered bottom */
+  }
+
+  .business-puzzle__heading {
+    font-size: 2em; /* Even smaller heading for phones */
+  }
+
+  .business-puzzle__intro-text {
+    font-size: 1em;
+  }
+}
+
+/* For screens smaller than 576px (e.g., most mobile phones) */
+@media (max-width: 576px) {
+  .section-business-puzzle {
+    padding: 30px 0; /* Smaller overall padding */
+    min-height: 300px; /* Minimal height for smallest phones */
+    background-size: 350px auto; /* Smallest specific width for image */
+  }
+
+  .business-puzzle__heading {
+    font-size: 1.8em; /* Smallest heading size */
+  }
+
+  .business-puzzle__contact-icons {
+    gap: 15px; /* Closer icons */
   }
 }
 
