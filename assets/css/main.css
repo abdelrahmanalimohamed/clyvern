@@ -3530,7 +3530,7 @@ section,
   }
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 430px) {
   .showcase-headline {
     font-size: 1.7em;
   }
