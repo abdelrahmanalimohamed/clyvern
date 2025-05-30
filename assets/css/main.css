@@ -677,7 +677,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 99999;
-  background-color: var(--accent-color);
+  background-color: #083449;
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -691,7 +691,7 @@ h6 {
 }
 
 .scroll-top:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background-color: color-mix(in srgb, #083449, transparent 20%);
   color: var(--contrast-color);
 }
 
@@ -3088,6 +3088,21 @@ section,
   background-repeat: no-repeat; /* Prevents image from repeating */
 }
 
+.section-contact-business-puzzle {
+  background-color: #00AEEF; /* Dark blue background */
+  color: white; /* Default text color for the section */
+  position: relative; /* Essential for positioning the background image correctly */
+  overflow: hidden; /* Ensures background image doesn't overflow */
+  min-height: 550px; /* Ensure enough height for the content and the large image on desktop */
+
+  /* The man's image as a background for the section (DEFAULT/DESKTOP) */
+  background-image: url('../img/BIG3.png'); /* Path to your image */
+  background-size: 700px auto; /* Specific width for desktop to control size, auto for height */
+  /* This value is crucial for positioning the man on the far right and slightly off-screen on desktop */
+  background-position: calc(100% + -20%) bottom; /* Adjust 100px to move man further right if needed */
+  background-repeat: no-repeat; /* Prevents image from repeating */
+}
+
 .section-business-puzzle .container {
   max-width: 1200px; /* Max width of your content */
   margin: 0 auto; /* Center the container */
@@ -3099,6 +3114,14 @@ section,
 /* --- Heading Styles --- */
 .business-puzzle__heading {
   font-size: 3em; /* Adjust as needed for desktop */
+  text-align: left; /* Aligns to left like the image */
+  margin-bottom: 20px;
+  line-height: 1.2; /* Spacing between lines */
+  font-weight: bold; /* Assuming the heading is bold */
+}
+
+.business-contact-puzzle__heading {
+  font-size: 4m; /* Adjust as needed for desktop */
   text-align: left; /* Aligns to left like the image */
   margin-bottom: 20px;
   line-height: 1.2; /* Spacing between lines */
@@ -3249,4 +3272,441 @@ section,
     gap: 15px; /* Closer icons */
   }
 }
+.section-business-showcase {
+  /* Ensure the gradient is 50% blue, 50% white */
+  background: linear-gradient(to bottom, #40c4f1 50%, white 50%);
+  padding: 50px 0; /* Add padding to the top and bottom */
+  position: relative;
+  overflow: hidden; /* To ensure content and image don't spill */
+  min-height: 600px; /* Adjust min-height to provide enough space, or use 'auto' */
+}
 
+.showcase-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items to the top to control layout better on desktop */
+  position: relative;
+  z-index: 1; /* Ensure content is above background */
+  padding: 0 20px; /* Add some padding for smaller screens */
+}
+
+/* Content Panel */
+.content-panel {
+  flex: 1;
+  padding-right: 30px; /* Space between text and image */
+  padding-top: 50px; /* Push content down slightly from the top */
+  position: relative;
+}
+
+/* Headline */
+.showcase-headline {
+  color: #083449; /* Dark blue */
+  font-weight: bold;
+  font-size: 3em; /* Adjust as needed */
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.headline-line {
+  display: block; /* Ensures "YOUR BUSINESS PUZZLE?" is on its own line */
+}
+
+.headline-highlight {
+  color: white;
+}
+
+/* Intro Block */
+.intro-block {
+  margin-bottom: 20px; /* Space between intro text and form */
+}
+
+.intro-text {
+  color: #083449; /* Dark blue */
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.call-to-action-link {
+  display: inline-block;
+  color: white; /* Dark blue */
+  font-weight: bold;
+  font-size: 1.5em; /* Adjust as needed */
+  text-decoration: none;
+  margin-top: 20px;
+  margin-bottom: 40px; /* Space between link and form */
+}
+
+/* Lead Capture Form - Reverted to initial design */
+.lead-capture-form {
+  background-color: transparent; /* No background for the form itself */
+  padding: 0; /* No padding for the form container */
+  border-radius: 0; /* No border radius */
+  box-shadow: none; /* No box shadow */
+  max-width: none; /* No max-width restriction */
+  margin-top: 0; /* Reset margin-top */
+  border: none; /* No border */
+}
+
+.form-field-group {
+  margin-bottom: 15px; /* Adjust spacing between fields */
+  display: flex;
+  align-items: center;
+}
+
+.form-field-group label {
+  color: #083449;
+  font-weight: bold;
+  width: 80px; /* Align labels */
+  flex-shrink: 0;
+}
+
+.form-field-group input[type="text"],
+.form-field-group input[type="email"],
+.form-field-group input[type="tel"],
+.form-field-group textarea { /* Added textarea for message field */
+  border: none; /* No border for the input fields */
+  border-radius: 20px; /* Highly rounded corners for a pill-like shape */
+  padding: 12px 15px; /* Internal padding for text within the input fields */
+  width: 50%; /* Inputs take full width of their parent container */
+  box-sizing: border-box; /* Includes padding in the element's total width */
+  color: #555; /* Default text color inside the input */
+  background-color: #f8f8f8; /* Very light gray background for input fields */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08); /* Subtle inner shadow for depth */
+  font-size: 1em; /* Ensures readable text size inside inputs */
+}
+
+/* Figure Visual (Man Image) */
+.figure-visual {
+  flex-shrink: 0;
+  width: 40%; /* Adjust as needed */
+  text-align: right; /* Align image to the right */
+  position: absolute; /* Change to absolute positioning */
+  top: 0px; /* Keep the top value as requested */
+  bottom: 0; /* This will make the bottom of the image align with the bottom of the parent */
+  right: 20px; /* Adjust this value to position the image horizontally */
+  z-index: 2; /* Ensure the man is on top of the background split */
+  /* Remove height: calc(100% - 30px); as top and bottom define height */
+}
+
+.main-figure-image {
+  max-width: 200%;
+  height: 110%; /* Make the image fill the height of its absolutely positioned parent */
+  object-fit: contain; /* Ensures the image scales down without being cropped and maintains aspect ratio */
+  display: block;
+}
+
+
+/* Responsive Adjustments  for tablets , mobile rotated*/
+@media (max-width: 992px) {
+  .section-business-showcase {
+    background: linear-gradient(to bottom, #40c4f1 50%, white 50%);
+    padding-top: 15px; /* Aggressively reduced padding at the very top */
+    padding-bottom: 30px; /* Adjusted padding at the bottom */
+    min-height: auto; /* Allow height to adjust based on content */
+    position: relative; /* Ensure it's a positioning context for children if needed */
+  }
+
+  .showcase-container {
+    flex-direction: column; /* Stack content and image vertically */
+    align-items: flex-start; /* Align content to the left */
+    padding: 0 15px; /* Reduced horizontal padding */
+    position: relative; /* Crucial for absolute positioning of image */
+    text-align: left; /* Default for the container */
+  }
+
+  /* Image container - make it smaller and on the right */
+  .figure-visual {
+    order: 1; /* Keep the image at the top visually */
+    width: 32%; /* Decreased image size even further */
+    height: auto; /* Allow height to scale naturally */
+    position: absolute; /* Absolute positioning */
+    top: 0; /* Align to the top of the showcase-container */
+    right: 15px; /* Position to the right */
+    bottom: auto; /* Reset bottom */
+    left: auto; /* Reset left */
+    z-index: 3; /* Ensure it's above other elements */
+    text-align: right; /* Align the image content to the right within its container */
+    margin: 0; /* Remove any residual margins */
+  }
+
+  .main-figure-image {
+    max-width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  /* Content Panel - make it appear first and align texts, lift it up */
+  .content-panel {
+    order: 2; /* Content panel after the image in source order, but visually below due to absolute positioning */
+    padding-right: 0; /* Remove desktop padding */
+    padding-top: 10px; /* Lift text up */
+    width: 100%; /* Take full width of the container */
+    max-width: 500px; /* Optional: constrain width for better readability on larger mobile screens */
+    margin-left: 0; /* Align to left */
+    margin-right: auto;
+    text-align: left; /* Align all text content to the left */
+  }
+
+  .showcase-headline {
+    color: #083449; /* Dark blue */
+    font-weight: bold;
+    font-size: 2em; /* Adjusted headline size */
+    line-height: 1.2;
+    margin-bottom: 5px; /* Even less margin below headline */
+    text-align: left; /* Explicitly align to top left */
+    padding-left: 0; /* Ensure no extra padding pushing it right */
+  }
+
+  .headline-line {
+    display: block; /* Ensures "YOUR BUSINESS PUZZLE?" is on its own line */
+  }
+
+  .headline-highlight {
+    color: white; /* Stays white */
+  }
+
+  .intro-block {
+    margin-bottom: 10px; /* Reduced margin below intro block */
+    text-align: left;
+  }
+
+  .intro-text {
+    color: #083449; /* Dark blue */
+    font-size: 1em; /* Adjusted intro text size */
+    margin-bottom: 8px; /* Reduced margin below intro text */
+  }
+
+  .call-to-action-link {
+    display: inline-block;
+    color: white; /* Dark blue */
+    font-weight: bold;
+    font-size: 1.2em; /* Adjusted CTA link size */
+    text-decoration: none;
+    margin-top: 0;
+    margin-bottom: 10px; /* Reduced margin below CTA link */
+    text-align: left;
+  }
+
+  /* Lead Capture Form - Ensure it's in the white area and styled */
+  .lead-capture-form {
+    padding: 12px; /* Reduced internal padding */
+    border-radius: 8px; /* Slightly rounded corners for visual separation */
+    max-width: 100%;
+    margin-left: 0; /* Reset margin */
+    margin-right: 0; /* Reset margin */
+    margin-top: 230px; /* Increased margin-top to move form down */
+    border: none; /* Ensure no border */
+  }
+
+  /* Form field groups specific mobile adjustments */
+  .form-field-group {
+    margin-bottom: 10px; /* Reduced spacing between fields */
+    display: flex;
+    flex-direction: column; /* Stack label and input vertically */
+    align-items: flex-start; /* Align label/input to the left */
+  }
+
+  .form-field-group label {
+    color: #083449;
+    font-weight: bold;
+    width: auto; /* Remove fixed width */
+    margin-bottom: 3px; /* Reduced space between label and input */
+    flex-shrink: 0;
+  }
+
+  .form-field-group input[type="text"],
+  .form-field-group input[type="email"],
+  .form-field-group input[type="tel"],
+  .form-field-group textarea { /* Added textarea for message field */
+    border: none; /* Removed border from input fields */
+    border-radius: 3px;
+    padding: 8px; /* Reduced input padding */
+    width: 100%; /* Inputs take full width of the form field group */
+    box-sizing: border-box;
+    color: #555;
+    background-color: #f0f0f0; /* Slightly off-white background for input fields for subtle distinction */
+  }
+}
+
+@media (max-width: 768px) {
+  .showcase-headline {
+    font-size: 1.7em;
+  }
+
+  .intro-text {
+    font-size: 0.9em;
+  }
+
+  .call-to-action-link {
+    font-size: 1.1em;
+  }
+
+  .mobile-only-break {
+    display: block; /* Force line break on smaller screens */
+  }
+
+  .mobile-break {
+    display: block;
+  }
+
+  .form-field-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-field-group label {
+    width: auto;
+    margin-bottom: 5px;
+  }
+
+  .figure-visual {
+    width: 35%; /* Adjusted image size for this breakpoint, further smaller */
+    top: 10px; /* Lift image slightly more */
+    right: 10px; /* Adjust right position */
+  }
+
+  .lead-capture-form {
+    padding: 10px; /* Adjusted padding */
+    margin-top: 20px; /* Move form down a bit more */
+  }
+
+  .form-field-group input[type="text"],
+  .form-field-group input[type="email"],
+  .form-field-group input[type="tel"],
+  .form-field-group textarea { /* Added textarea for message field */
+    padding: 7px; /* Adjusted input padding */
+  }
+
+  .content-panel {
+    padding-top: 5px; /* Lift text further */
+  }
+}
+
+@media (max-width: 480px) {
+  .showcase-headline {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  .section-business-showcase {
+    padding-top: 15px; /* Minimum padding at the top */
+    padding-bottom: 0.%; /* Adjusted padding at the bottom */
+    background: linear-gradient(to bottom, #40c4f1 50%, white 50%);
+    margin: 0% auto  ; 
+  }
+
+  .showcase-container {
+    padding: 0 5px; /* Reduced horizontal padding */
+  }
+
+  .figure-visual {
+    width: 60%; /* Final smallest image size for very narrow screens, further smaller */
+    top: 28px; /* Lift image even more */
+    right: -5px; /* Adjust right position */
+  }
+
+    .lead-capture-form {
+    padding: 8px;               /* Smallest padding for narrow screens */
+    margin: 50% auto -20px ; 
+    display: block;             /* Ensures it behaves like a block element */
+    width: 100%;                /* Takes full width of container */
+  }
+
+  .form-field-group input[type="text"],
+  .form-field-group input[type="email"],
+  .form-field-group input[type="tel"],
+  .form-field-group textarea { /* Added textarea for message field */
+    padding: 6px; /* Smallest input padding */
+  }
+
+  .content-panel {
+    padding-top: 0px; /* Text lifted to the very top if desired */
+  }
+}
+
+
+@media (max-width: 400px) {
+  .showcase-headline {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  .section-business-showcase {
+    padding-top: 15px; /* Minimum padding at the top */
+    padding-bottom: 0.%; /* Adjusted padding at the bottom */
+    background: linear-gradient(to bottom, #40c4f1 50%, white 50%);
+    margin: 0% auto  ; 
+  }
+
+  .showcase-container {
+    padding: 0 5px; /* Reduced horizontal padding */
+  }
+
+  .figure-visual {
+    width: 60%; /* Final smallest image size for very narrow screens, further smaller */
+    top: 38px; /* Lift image even more */
+    right: -5px; /* Adjust right position */
+  }
+
+    .lead-capture-form {
+    padding: 8px;               /* Smallest padding for narrow screens */
+    margin: 50% auto -30px ; 
+    display: block;             /* Ensures it behaves like a block element */
+    width: 100%;                /* Takes full width of container */
+  }
+
+  .form-field-group input[type="text"],
+  .form-field-group input[type="email"],
+  .form-field-group input[type="tel"],
+  .form-field-group textarea { /* Added textarea for message field */
+    padding: 6px; /* Smallest input padding */
+  }
+
+  .content-panel {
+    padding-top: 0px; /* Text lifted to the very top if desired */
+  }
+}
+
+@media (width: 375px) {
+  .showcase-headline {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  .section-business-showcase {
+    padding-top: 15px; /* Minimum padding at the top */
+    padding-bottom: 0.%; /* Adjusted padding at the bottom */
+    background: linear-gradient(to bottom, #40c4f1 50%, white 50%);
+    margin: 0% auto  ; 
+  }
+
+  .showcase-container {
+    padding: 0 5px; /* Reduced horizontal padding */
+  }
+
+  .figure-visual {
+    width: 60%; /* Final smallest image size for very narrow screens, further smaller */
+    top: px; /* Lift image even more */
+    right: -5px; /* Adjust right position */
+  }
+
+    .lead-capture-form {
+    padding: 8px;               /* Smallest padding for narrow screens */
+    margin: 50% auto -30px ; 
+    display: block;             /* Ensures it behaves like a block element */
+    width: 100%;                /* Takes full width of container */
+  }
+
+  .form-field-group input[type="text"],
+  .form-field-group input[type="email"],
+  .form-field-group input[type="tel"],
+  .form-field-group textarea { /* Added textarea for message field */
+    padding: 6px; /* Smallest input padding */
+  }
+
+  .content-panel {
+    padding-top: 0px; /* Text lifted to the very top if desired */
+  }
+}
