@@ -3710,3 +3710,45 @@ section,
     padding-top: 0px; /* Text lifted to the very top if desired */
   }
 }
+
+@media (max-width: 668px) {
+  .showcase-headline {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  .section-business-showcase {
+    padding-top: 15px; /* Minimum padding at the top */
+    padding-bottom: 0.%; /* Adjusted padding at the bottom */
+    background: linear-gradient(to bottom, #40c4f1 50%, white 50%);
+    margin: 0% auto  ; 
+  }
+
+  .showcase-container {
+    padding: 0 5px; /* Reduced horizontal padding */
+  }
+
+  .figure-visual {
+    width: 40%; /* Final smallest image size for very narrow screens, further smaller */
+    top: 20px; /* Lift image even more */
+    right: -5px; /* Adjust right position */
+  }
+
+    .lead-capture-form {
+    padding: 8px;               /* Smallest padding for narrow screens */
+    margin: 50% auto -30px ; 
+    display: block;             /* Ensures it behaves like a block element */
+    width: 100%;                /* Takes full width of container */
+  }
+
+  .form-field-group input[type="text"],
+  .form-field-group input[type="email"],
+  .form-field-group input[type="tel"],
+  .form-field-group textarea { /* Added textarea for message field */
+    padding: 6px; /* Smallest input padding */
+  }
+
+  .content-panel {
+    padding-top: 0px; /* Text lifted to the very top if desired */
+  }
+}
