@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Updated Values</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0d1b2a;
+            color: #083449;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Values Section - Mobile Style Layout */
+        .values-section {
+            background-color: #083449;
+            color: #ffffff;
+            padding: 60px 0;
+            overflow: hidden;
+        }
+
+        .values-section .container {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .values-section h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #40c4f1;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px 40px;
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .value-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .value-icon img {
+            max-width: 50px;
+            max-height: 50px;
+        }
+
+        .value-item h4 {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .value-item p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #e0e0e0;
+            margin-bottom: 0;
+        }
+
+        /* CEO Section */
+        .ceo-section {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .ceo-image-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+
+        .ceo-image {
+            width: 280px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .geometric-shapes {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            z-index: -1;
+        }
+
+        .shape-1 {
+            width: 60px;
+            height: 60px;
+            background-color: #40c4f1;
+            border-radius: 10px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .shape-2 {
+            width: 40px;
+            height: 40px;
+            background-color: #00d4aa;
+            border-radius: 50%;
+            position: absolute;
+            top: 80px;
+            right: 40px;
+        }
+
+        .shape-3 {
+            width: 30px;
+            height: 30px;
+            background-color: #ff6b6b;
+            transform: rotate(45deg);
+            position: absolute;
+            bottom: 60px;
+            left: -30px;
+        }
+
+        .cta-text-bottom h3 {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .contact-btn {
+            background-color: #40c4f1;
+            color: #ffffff;
+            border: none;
+            padding: 18px 35px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(64, 196, 241, 0.3);
+        }
+
+        .contact-btn:hover {
+            background-color: #2a9cd2;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(64, 196, 241, 0.4);
+            color: #ffffff;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .values-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                max-width: 400px;
+            }
+            
+            .values-section .container {
+                max-width: 500px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .values-section {
+                padding: 40px 0;
+            }
+
+            .values-section .container {
+                padding: 0 15px;
+            }
+
+            .values-section h2 {
+                font-size: 2rem;
+                margin-bottom: 40px;
+            }
+
+            .values-grid {
+                margin-bottom: 50px;
+            }
+
+            .value-icon {
+                width: 70px;
+                height: 70px;
+            }
+
+            .value-icon img {
+                max-width: 40px;
+                max-height: 40px;
+            }
+
+            .value-item h4 {
+                font-size: 1.2rem;
+            }
+
+            .value-item p {
+                font-size: 0.95rem;
+            }
+
+            .ceo-image {
+                width: 240px;
+                height: 300px;
+            }
+
+            .cta-text-bottom h3 {
+                font-size: 1.8rem;
+            }
+
+            .contact-btn {
+                padding: 15px 30px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="values" class="values-section">
+        <div class="container">
+            <h2>Values Clyvern Stands For</h2>
+            
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-icon">
+                        <img src="assets/img/complete-puzzle.png" alt="Collaboration Icon">
+                    </div>
+                    <h4>Collaboration Over Competition</h4>
+                    <p>We believe that the best results come from a successful partnership. By building strong collaborative partnerships with our clients, we co-create solutions that are perfectly aligned with their goals and their ensuring mutual success.</p>
+                </div>
+
+                <div class="value-item">
+                    <div class="value-icon">
+                        <img src="assets/img/radical.png" alt="Transparency Icon">
+                    </div>
+                    <h4>Radical Transparency</h4>
+                    <p>Trust is earned through honesty. We're all about open, clear communication, showing our clients of where we stand and keeping them in the light about how we're moving the needle forward for them.</p>
+                </div>
+
+                <div class="value-item">
+                    <div class="value-icon">
+                        <img src="assets/img/innovation.png" alt="Innovation Icon">
+                    </div>
+                    <h4>Innovation Always</h4>
+                    <p>We're not just keeping up with modern times; we're shaping them. We embrace the latest tech, trends, and creative solutions to push boundaries, ensuring our clients receive results that prepare businesses for what's next.</p>
+                </div>
+
+                <div class="value-item">
+                    <div class="value-icon">
+                        <img src="assets/img/excellence.png" alt="Excellence Icon">
+                    </div>
+                    <h4>Striving for Excellence</h4>
+                    <p>Mediocrity isn't in our DNA, we don't settle for "good enough." We are relentless in our pursuit of perfection, ensuring that every solution we deliver is of the highest quality and makes a real impact on our clients' success.</p>
+                </div>
+
+                <div class="value-item">
+                    <div class="value-icon">
+                        <img src="assets/img/clients.png" alt="Client Icon">
+                    </div>
+                    <h4>Client Comes First Mindset</h4>
+                    <p>Our clients are not just customers, they're our partners. We listen, understand, and tailor our solutions to fit their unique needs, always focusing on delivering value that maximizes their success through measurable results.</p>
+                </div>
+
+                <div class="value-item">
+                    <div class="value-icon">
+                        <img src="assets/img/growth.png" alt="Growth Icon">
+                    </div>
+                    <h4>Sustainable Growth</h4>
+                    <p>We believe in creating solutions that don't just last, but help you thrive. Our commitment to sustainability means building solutions that grow with your business and make a lasting positive impact on the world.</p>
+                </div>
+
+                <div class="value-item">
+                    <div class="value-icon">
+                        <img src="assets/img/ownership.png" alt="Ownership Icon">
+                    </div>
+                    <h4>Ownership</h4>
+                    <p>We take pride in our work and stand by the results, whether it's a success or a lesson learned, we take full responsibility for the outcomes and strive for constant improvement.</p>
+                </div>
+            </div>
+
+            <div class="ceo-section">
+                <div class="ceo-image-wrapper">
+                    <img src="assets/img/ceo.png" alt="Clyvern CEO" class="ceo-image">
+                    <div class="geometric-shapes">
+                        <div class="shape-1"></div>
+                        <div class="shape-2"></div>
+                        <div class="shape-3"></div>
+                    </div>
+                </div>
+                
+                <div class="cta-text-bottom">
+                    <h3>Let's unlock your business potential together!</h3>
+                    <a href="#" class="contact-btn">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
