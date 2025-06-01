@@ -15,6 +15,7 @@
   --background-color: #ffffff;
   --default-color: ;
   --heading-color: #111111;
+  --accent-color: #111111;
   --surface-color: #ffffff;
   --contrast-color: #ffffff;
 }
@@ -823,461 +824,27 @@ section,
 .section-title p {
   margin-bottom: 0;
 }
-.about-section {
-    background-color: #40c4f1; /* The blue background from your image */
-    color: #ffffff; /* White text color */
-    padding: 80px 0; /* Add some vertical padding for better spacing */
-    min-height: 100vh; /* Ensure it takes full viewport height if content is short */
-    display: flex; /* Use flexbox for vertical centering of content if needed */
-    align-items: center; /* Vertically center content */
+
+.hero {
+  --default-color: #ffffff;
+  --background-color: #; /* Set the background color here if not already in HTML */
+  --heading-color: #ffffff;
+  width: 100%;
+  min-height: calc(100vh - 120px);
+  position: relative;
+  overflow: hidden;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Add background image properties directly to .hero */
+  background-image: url('../img/Artboard 1.png'); /* Set your image here */
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-position: center center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents image repetition */
 }
 
-.about-section .container {
-    max-width: 1200px; /* Adjust container width as needed */
-    margin: 0 auto; /* Center the container */
-    padding: 0 15px; /* Add horizontal padding */
-}
-
-.about-section .main-heading {
-    font-size: 3.5rem; /* Adjust font size for the main heading */
-    font-weight: bold;
-    margin-bottom: 30px; /* Space below the heading */
-    color: #ffffff;
-}
-
-.about-section p {
-    font-size: 1.1rem; /* Adjust paragraph font size */
-    line-height: 1.8; /* Improve readability */
-    margin-bottom: 20px; /* Space between paragraphs */
-}
-
-.about-section .content-column {
-    padding-right: 40px; /* Add some padding to the right of the text column */
-}
-
-.about-section .image-column {
-    /* The d-flex, justify-content-center, align-items-center classes handle centering */
-    height: 100%; /* Ensure the column takes full height for vertical centering */
-    display: flex; /* Override previous display if needed, ensures flex properties */
-    justify-content: center;
-    align-items: center;
-    padding-left: 20px; /* Add some padding to the left of the image column */
-}
-
-.about-section .two-squares-image {
-    max-width: 100%; /* Ensure the image is responsive */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Remove extra space below image */
-    width: 300px; /* Set a specific width for the image of squares, adjust as needed */
-    height: 300px; /* Set a specific height for the image of squares, adjust as needed */
-    object-fit: contain; /* Ensures the whole image is visible within the bounds */
-    /* You might need to set specific background or border for the image if it's a raw SVG or has transparency */
-    /* If the image is a solid dark square in a white frame, you might need to style it differently */
-}
-
-/* Responsive adjustments */
-@media (max-width: 991.98px) {
-    .about-section .content-column {
-        padding-right: 15px;
-        margin-bottom: 40px; /* Add space below text on smaller screens */
-    }
-    .about-section .image-column {
-        padding-left: 15px;
-    }
-    .about-section .main-heading {
-        font-size: 2.8rem;
-    }
-}
-
-@media (max-width: 767.98px) {
-    .about-section {
-        padding: 60px 0;
-    }
-    .about-section .main-heading {
-        font-size: 2.2rem;
-    }
-    .about-section p {
-        font-size: 1rem;
-    }
-}
-
-/* Mission and Vision Section */
-.mission-vision-section {
-    background-color: #2b3a4a; /* Dark blue background from your image */
-    color: #ffffff; /* White text color */
-    padding: 80px 0; /* Adjust padding as needed */
-}
-
-.mission-vision-section .section-title {
-    font-size: 3rem; /* Adjust font size for main titles */
-    font-weight: bold;
-    color: #40c4f1; /* Bright blue color for the titles */
-    margin-bottom: 60px; /* Space below the top title */
-    letter-spacing: 2px; /* Adds spacing between letters */
-    text-transform: uppercase; /* Uppercase text */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
-}
-
-.mission-vision-section .bottom-title {
-    margin-top: 80px; /* Space above the bottom title */
-    margin-bottom: 0; /* Remove bottom margin if it's the last element */
-}
-
-.mission-vision-section .subsection-heading {
-    font-size: 2.2rem; /* Adjust font size for "Mission:" and "Vision:" */
-    font-weight: bold;
-    color: #ffffff;
-    margin-bottom: 25px; /* Space below heading */
-}
-
-.mission-vision-section p {
-    font-size: 1.1rem; /* Consistent paragraph font size */
-    line-height: 1.8;
-    color: #f0f0f0; /* Slightly off-white for paragraphs */
-}
-
-.mission-vision-section .mission-row,
-.mission-vision-section .vision-row {
-    margin-bottom: 60px; /* Space between Mission and Vision sections */
-}
-
-.mission-vision-section .mission-image,
-.mission-vision-section .vision-image {
-    max-width: 340px; /* Adjust max-width for images */
-    height: auto;
-    display: block; /* Remove extra space below images */
-    margin: 0 auto; /* Center images within their columns */
-    padding: 20px; /* Add padding around the image for the blue background if needed */
-    /* If the image has a transparent background, you might need a background color here */
-    background-color: transparent; /* Default, adjust if your image needs a solid background box */
-}
-
-/* Specific styling for the blue box behind the VR headset */
-.mission-vision-section .vision-image {
-    position: relative; /* For positioning the pseudo-element */
-    z-index: 1; /* Ensure image is above the pseudo-element */
-}
-
-.mission-vision-section .vision-image::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 50%; /* Adjust as needed for vertical positioning */
-    left: 50%; /* Adjust as needed for horizontal positioning */
-    width: 250px; /* Width of the blue square */
-    height: 250px; /* Height of the blue square */
-    background-color: #40c4f1; /* Blue color for the square */
-    transform: translate(-50%, -50%); /* Center the pseudo-element */
-    z-index: -1; /* Place it behind the image */
-    /* Adjust top/left/transform to get the exact position as in your image */
-    /* For instance, to shift it left and down: */
-    left: calc(50% - 30px); /* Shift left */
-    top: calc(50% + 30px); /* Shift down */
-}
-
-/* Specific styling for the dart image's background (simulated) */
-.mission-vision-section .mission-image {
-    position: relative; /* For positioning the pseudo-element */
-    z-index: 1; /* Ensure image is above the pseudo-element */
-}
-
-.mission-vision-section .mission-image::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200px; /* Width of the green square */
-    height: 200px; /* Height of the green square */
-    background-color: #7ab77c; /* Greenish color for the square */
-    transform: translate(-50%, -50%);
-    z-index: -1; /* Place it behind the image */
-    /* Adjust top/left/transform to get the exact position as in your image */
-    /* For instance, to shift it right and up: */
-    left: calc(50% + 30px); /* Shift right */
-    top: calc(50% - 30px); /* Shift up */
-}
-
-
-/* Responsive Adjustments */
-@media (max-width: 991.98px) {
-    .mission-vision-section .section-title {
-        font-size: 2.5rem;
-        margin-bottom: 40px;
-    }
-    .mission-vision-section .subsection-heading {
-        font-size: 1.8rem;
-    }
-    .mission-vision-section p {
-        font-size: 1rem;
-    }
-    .mission-vision-section .mission-row,
-    .mission-vision-section .vision-row {
-        flex-direction: column; /* Stack columns on smaller screens */
-        text-align: center;
-    }
-    .mission-vision-section .mission-content,
-    .mission-vision-section .vision-content {
-        order: 1; /* Text comes first on mobile */
-        margin-bottom: 30px;
-    }
-    .mission-vision-section .mission-image-wrapper,
-    .mission-vision-section .vision-image-wrapper {
-        order: 2; /* Image comes second on mobile */
-    }
-
-    /* Adjust pseudo-elements for smaller screens if necessary */
-    .mission-vision-section .vision-image::before,
-    .mission-vision-section .mission-image::after {
-        width: 150px;
-        height: 150px;
-    }
-}
-
-@media (max-width: 767.98px) {
-    .mission-vision-section .section-title {
-        font-size: 2rem;
-    }
-    .mission-vision-section .subsection-heading {
-        font-size: 1.6rem;
-    }
-    .mission-vision-section .mission-image,
-    .mission-vision-section .vision-image {
-        max-width: 200px;
-    }
-}
-
-/* Values Section */
-.values-section {
-    background-color: #083449;
-    color: #ffffff;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    overflow: hidden;
-    align-items: flex-start;
-    min-height: auto;
-}
-
-.values-section .container-fluid {
-    padding: 0;
-    width: 100%;
-    max-width: 1800px;
-}
-
-.values-section .value-item {
-    margin-bottom: 70px;
-    padding: 0 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-}
-
-.values-section .value-icon {
-    width: 100px;
-    height: 100px;
-    background-color: transparent;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 25px;
-}
-
-.values-section .value-icon img {
-    max-width: 80px;
-    max-height: 80px;
-}
-
-.values-section .value-item h4 {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #ffffff;
-    margin-bottom: 15px;
-}
-
-.values-section .value-item p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #f0f0f0;
-    max-width: 450px;
-}
-
-.values-section .ceo-image-column {
-    display: flex;
-    /* --- CHANGE: Adjust alignment to center the image within its smaller space --- */
-    align-items: flex-end; /* Still align to bottom of column */
-    justify-content: center; /* Center horizontally within its column */
-    padding: 0;
-    /* You might want to add some right padding here if the image gets too close to the edge after shrinking */
-}
-
-.values-section .ceo-image {
-    /* --- CHANGE: Make image smaller here --- */
-    max-width: 450px; /* Adjust this value to make the image smaller */
-    width: 100%; /* Ensure it's still responsive within its max-width */
-    height: auto;
-    object-fit: contain; /* Use 'contain' to ensure the whole image is visible if it has internal padding/shapes */
-    display: block;
-    /* --- CHANGE: Center the image horizontally if its column is wider than max-width --- */
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.values-section .ceo-image-mobile-wrapper {
-    width: 100%;
-    margin-top: 60px;
-    margin-bottom: 60px;
-    text-align: center;
-}
-
-.values-section .ceo-image-mobile-wrapper .ceo-image-mobile {
-    max-width: 400px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-
-.values-section .cta-text-bottom {
-    margin-top: 0;
-    text-align: center;
-    padding-left: 0;
-}
-
-.values-section .cta-text-bottom h4 {
-    font-size: 1.5rem;
-    color: #ffffff;
-    margin-bottom: 35px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.values-section .contact-btn {
-    background-color: #40c4f1;
-    color: #ffffff;
-    border: none;
-    padding: 20px 40px;
-    border-radius: 50px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.values-section .contact-btn:hover {
-    background-color: #2a9cd2;
-}
-
-/* Responsive Adjustments */
-
-
-
-@media (max-width: 991.98px) { /* Medium devices (tablets) and smaller */
-    .values-section {
-        padding-top: 40px;
-         display: block; 
-    }
-    .values-section .values-content-column {
-        padding: 40px 15px 60px 15px;
-           margin-left: 0; /* Or margin: 0 auto; for centering */
-        max-width: 100%; /* Allow it to take full width */
-    }
-    .values-section .ceo-image-column {
-        /* This column is hidden on mobile, so its desktop styles don't apply here */
-        padding-right: 0; /* Reset for safety */
-    }
-
-    .values-section .ceo-image-mobile-wrapper {
-        margin-top: 40px;
-        margin-bottom: 40px;
-    }
-    .values-section .ceo-image-mobile-wrapper .ceo-image-mobile {
-        max-width: 300px;
-    }
-
-    .values-section .value-item {
-        margin-bottom: 40px;
-        align-items: center;
-        text-align: center;
-    }
-    .values-section .value-item h4 {
-        font-size: 1.3rem;
-    }
-    .values-section .cta-text-bottom {
-        text-align: center;
-        padding-left: 0;
-        margin-top: 0;
-    }
-    .values-section .cta-text-bottom h3 {
-        font-size: 2rem;
-    }
-    .values-section .value-icon {
-        width: 80px;
-        height: 80px;
-        margin-bottom: 20px;
-    }
-    .values-section .value-icon img {
-        max-width: 80px;
-        max-height: 80px;
-    }
-}
-
-@media (max-width: 767.98px) { /* Small devices (phones) */
-  
-     .values-section .section-title {
-        text-align: center !important; /* Ensure the title is centered */
-        top: auto !important; /* Remove fixed positioning */
-        position: relative; /* Set to relative to behave normally in flow */
-        margin-bottom: 30px; /* Add some space below the title */
-    }
-
-    .values-section .values-content-column {
-        padding: 20px 15px; /* Adjust padding for smaller screens */
-    }
-
-    .values-section .value-item {
-        margin-bottom: 40px; /* Adjust spacing between value items */
-        padding: 0 15px; /* Adjust padding for value items */
-        align-items: center; /* Center content within each value item */
-        text-align: center; /* Center text within each value item */
-    }
-
-    .values-section .value-icon {
-        margin-left: auto; /* Center the icon */
-        margin-right: auto; /* Center the icon */
-    }
-
-    .values-section .value-item p {
-        max-width: 90%; /* Adjust max-width for paragraphs on mobile */
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .values-section .value-item h4 {
-        font-size: 1.2rem;
-    }
-    .values-section .value-item p {
-        font-size: 0.9rem;
-    }
-    .values-section .ceo-image-mobile-wrapper {
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }
-    .values-section .ceo-image-mobile-wrapper .ceo-image-mobile {
-        max-width: 250px;
-    }
-    .values-section .cta-text-bottom h3 {
-        font-size: 1.6rem;
-    }
-    .values-section .value-icon {
-        width: 70px;
-        height: 70px;
-    }
-    .values-section .value-icon img {
-        max-width: 80px;
-        max-height: 80px;
-    }
-}
 .hero img {
   /* Remove these properties as the image will now be a background for .hero */
   /*
@@ -3857,12 +3424,10 @@ section,
     height: auto; /* Allow height to scale naturally */
     position: absolute; /* Absolute positioning */
     top: 0; /* Align to the top of the showcase-container */
-    right: 15px; /* Position to the right */
     bottom: auto; /* Reset bottom */
     left: auto; /* Reset left */
     z-index: 3; /* Ensure it's above other elements */
     text-align: right; /* Align the image content to the right within its container */
-    margin: 0; /* Remove any residual margins */
   }
 
   .main-figure-image {
@@ -3999,7 +3564,6 @@ section,
   .figure-visual {
     width: 35%; /* Adjusted image size for this breakpoint, further smaller */
     top: 10px; /* Lift image slightly more */
-    right: 10px; /* Adjust right position */
   }
 
   .lead-capture-form {
@@ -4039,7 +3603,6 @@ section,
   .figure-visual {
     width: 60%; /* Final smallest image size for very narrow screens, further smaller */
     top: 28px; /* Lift image even more */
-    right: -5px; /* Adjust right position */
   }
 
     .lead-capture-form {
@@ -4082,7 +3645,6 @@ section,
   .figure-visual {
     width: 60%; /* Final smallest image size for very narrow screens, further smaller */
     top: 38px; /* Lift image even more */
-    right: -5px; /* Adjust right position */
   }
 
     .lead-capture-form {
@@ -4124,7 +3686,6 @@ section,
   .figure-visual {
     width: 60%; /* Final smallest image size for very narrow screens, further smaller */
     top: px; /* Lift image even more */
-    right: -5px; /* Adjust right position */
   }
 
     .lead-capture-form {
