@@ -3400,6 +3400,8 @@ section,
 
 
 /* Responsive Adjustments  for tablets , mobile rotated*/
+
+
 @media (max-width: 992px) {
   .section-business-showcase {
     background: linear-gradient(to bottom, #40c4f1 50%, white 50%);
@@ -3730,4 +3732,3 @@ section,
   }
   
 }
-
