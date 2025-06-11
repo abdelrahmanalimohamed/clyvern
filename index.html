@@ -38,6 +38,7 @@
             font-family: Arial, sans-serif;
         }
 
+
 </style>
 <body class="index-page">
 
@@ -79,10 +80,11 @@
             <h2 class="sub-heading">PIECE IN YOUR</h2>
             <h2 class="sub-heading">BUSINESS PUZZLE</h2>
           </div>
-        </div>
+          
         <p>Our Services are tailored to fit, <br> Our Plans are built to grow</p>
+        </div>
         <div class="d-flex mt-4" data-aos="fade-up">
-          <a href="#" class="btn-get-started" style="background-color: #083449;  border: none; border-radius: 400px;">Know More</a>
+          <a href="services.html" class="btn-get-started" style="background-color: #083449;  border: none; border-radius: 400px;">Know More</a>
         </div>
       </div>
       <div class="col-lg-6">
@@ -110,13 +112,13 @@
               <img src="assets/img/sw-services.png" class="img-fluid service-img" alt="Software Services">
              
               <div class="service-info">
-              <h4 class="title" style="font-weight: bold; color: #40c4f1; margin-top: 2em; border-bottom: 2px solid #40c4f1; display: inline-block; padding-bottom: 15px;">
+              <h3 class="title" style="font-weight: normal; color: #40c4f1; margin-top: 2em; border-bottom: 2px solid #40c4f1; display: inline-block; padding-bottom: 15px; white-space: nowrap; width: 50%; ">
                   Software Services:
-              </h4>
+              </h3>
 
                 <p class="description">At CLYVERN, we design, develop, and deploy fully customized software ecosystems that integrate effortlessly with your existing infrastructure.</p>
                 
-                <button href="#" class="custom-button" >Read More</button>
+                <button onclick="window.location.href='services.html#swservices'" class="custom-button" >Read More</button>
               </div>
             </div>
           </div><!-- End Service Item -->
@@ -126,11 +128,11 @@
               <img src="assets/img/hardware-services.png" class="img-fluid service-img" alt="Hardware Services">
              
               <div class="service-info">
-                <h4 class="title" style="font-weight: bold; color: #40c4f1; margin-top: 2em; border-bottom: 2px solid #40c4f1; display: inline-block; padding-bottom: 15px;">
-                  Hardware Services:
+                <h4 class="title" style="font-weight: normal; color: #40c4f1; margin-top: 2em; border-bottom: 2px solid #40c4f1; display: inline-block; padding-bottom: 15px; white-space: nowrap; width: 50%;">
+                    Hardware Services:
                 </h4>
                 <p class="description">We design and manage secure, scalable IT environments that serve as the backbone of your digital operations</p>
-                <button href="#" class="custom-button"  >Read More</button>
+                <button onclick="window.location.href='services.html#hardwareservices'"" class="custom-button"  >Read More</button>
               </div>
             </div>
           </div><!-- End Service Item -->
@@ -140,10 +142,10 @@
               <img src="assets/img/end-to-end.png" class="img-fluid service-img" alt="End-to-End Services">
            
               <div class="service-info">
-                <h4 class="title" style="font-weight: bold; color: #40c4f1; margin-top: 2em; border-bottom: 2px solid #40c4f1; display: inline-block; padding-bottom: 15px;">
+                <h4 class="title" style="font-weight: normal; color: #40c4f1; margin-top: 2em; border-bottom: 2px solid #40c4f1; display: inline-block; padding-bottom: 15px; white-space: nowrap; width: 50%;">
                   End-to-End Services:</h4>
                 <p class="description">We deliver comprehensive technology solutions that bridge business strategy with execution, covering everything from DevOps pipelines to cloud-native deployments and secure data infrastructures.</p>
-                <button href="#" class="custom-button" >Read More</button>
+                <button onclick="window.location.href='services.html#endtoendservices'" class="custom-button" >Read More</button>
               </div>
             </div>
           </div><!-- End Service Item -->
@@ -153,20 +155,19 @@
               <img src="assets/img/digital-marketing.png" class="img-fluid service-img" alt="Digital Marketing Services">
               
               <div class="service-info">
-              <h4 class="title" style="font-weight: bold; color: #40c4f1; margin-top: 2em; border-bottom: 2px solid #40c4f1; display: inline-block; padding-bottom: 15px; white-space: nowrap;">
+              <h4 class="title" style="font-weight: normal; color: #40c4f1; margin-top: 2em; border-bottom: 2px solid #40c4f1; display: inline-block; padding-bottom: 15px;  white-space: nowrap; width: 50%;">
                   Digital Marketing Services:
                 </h4>
 
                 <p class="description">Transform your online presence into a powerful business engine with strategies designed to boost visibility, engagement, and conversions</p>
-               <button href="#" class="custom-button" >Read More</button>
+               <button onclick="window.location.href='services.html#marketingservices'" class="custom-button" >Read More</button>
               </div>
             </div>
           </div><!-- End Service Item -->
 
         </div>
-<br>
       </div>
-
+<br>
     </section><!-- /Services Section -->
 
     
@@ -289,6 +290,25 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDKSidqkc0zICCbNn7ipR0CHS08pKJVVug",
+    authDomain: "clyvern-website.firebaseapp.com",
+    projectId: "clyvern-website",
+    storageBucket: "clyvern-website.firebasestorage.app",
+    messagingSenderId: "642149334591",
+    appId: "1:642149334591:web:089c29b5dcddc82b20028a"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
 
 </body>
 
